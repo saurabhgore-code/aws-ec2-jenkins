@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+      stages{
+          stage("Start instances"){
+              steps
+                {  withCredentials([[
+                      $class: 'AmazonWebServicesCredentialsBinding',
+                       credentialsId: 'aws-keys',
+                     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                      secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ 
+   /*                   sh 'aws ec2 start-instances --instance-ids $InstanceId'
+                    }
+              }
+}
+              }
+           
+       stage("Stop instances"){
+              steps{
+        sh 'aws ec2 stop-instances --instance-ids $InstanceId'
+        }
+  
+   }
+*/
+  stage("create a bucket")  {
+       steps {
+    bat  'aws s3 mb s3://rahul.singh'
+     
+        }
+}
+
+}
