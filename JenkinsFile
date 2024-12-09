@@ -36,7 +36,7 @@ pipeline{
 */
 stage("copy folder to s3 bucket"){
                steps{
-               sh aws s3 sync s3://rohit.sharma/raman s3://sunil.saxena
+               sh 'aws s3 sync s3://rohit.sharma/raman s3://sunil.saxena'
               }
          }
 }
