@@ -4,7 +4,7 @@ pipeline{
          stage ('SCM checkout')
        {
      steps {
-      sh 'git clone https://github.com/saurabhgore-code/aws-jenkins.git'
+      bat 'git clone https://github.com/saurabhgore-code/aws-jenkins.git'
   }
     }
           stage("Start instances"){
@@ -14,7 +14,7 @@ pipeline{
                        credentialsId: 'aws-keys',
                      accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){ 
-                  sh 'aws ec2 start-instances --instance-ids $InstanceId'
+                  bat 'aws ec2 start-instances --instance-ids $InstanceId'
                     }
               }
 }
