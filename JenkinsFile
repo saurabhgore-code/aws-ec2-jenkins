@@ -1,7 +1,7 @@
 pipeline{
     agent any
       stages{
-         stage ('SCM checkout')
+     /*    stage ('SCM checkout')
        {
      steps {
       sh 'git clone https://github.com/saurabhgore-code/aws-ec2-jenkins.git'
@@ -33,6 +33,12 @@ pipeline{
                sh 'aws s3 mb s3://sunil.saxena'
               }
          }
-      }
+*/
+stage("copy folder to s3 bucket"){
+               steps{
+               sh aws s3 sync s3://rohit.sharma/raman s3://sunil.saxena
+              }
+         }
+}
 
 }
