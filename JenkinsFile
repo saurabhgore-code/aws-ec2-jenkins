@@ -4,7 +4,7 @@ pipeline{
          stage ('SCM checkout')
        {
      steps {
-      sh 'git clone https://github.com/saurabhgore-code/aws-jenkins.git'
+      sh 'git clone https://github.com/saurabhgore-code/aws-ec2-stop-start.git'
   }
     }
           stage("Start instances"){
