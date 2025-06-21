@@ -24,14 +24,14 @@ pipeline{
       
 
               
-           
+/*           
        stage("Stop instances"){
               steps{
         sh 'aws ec2 stop-instances --instance-ids $InstanceId --region=us-east-1'
         }
   
    }
-/*
+
       stage("create s3 bucket"){
                steps{
                sh 'aws s3 mb s3://sunil.saxena'
