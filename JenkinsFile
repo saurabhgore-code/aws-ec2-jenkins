@@ -1,15 +1,15 @@
 pipeline{
     agent any
 
-      stages{
-   /*
-         stage ('SCM checkout')
+      stages{ /*
+   stage ('SCM checkout')
        {
      
      steps {
       sh 'git clone https://github.com/saurabhgore-code/aws-ec2-jenkins.git'
-  }*/
+  }
     }
+*/
           stage("Start instances"){
               steps
                 {  withCredentials([[
